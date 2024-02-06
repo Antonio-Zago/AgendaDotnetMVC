@@ -1,4 +1,7 @@
 using AgendaMVC.Context;
+using AgendaMVC.Repositories;
+using AgendaMVC.Repositories.Interfaces;
+using AgendaMVC.Services;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -8,6 +11,9 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 {
     options.UseMySql(connection, ServerVersion.AutoDetect(connection));
 });
+
+builder.Services.AddTransient<HomeService>();
+builder.Services.AddTransient<IEventoRepository, EventoRepository>();
            
 
 // Add services to the container.
