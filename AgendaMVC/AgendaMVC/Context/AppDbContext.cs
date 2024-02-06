@@ -12,5 +12,9 @@ namespace AgendaMVC.Context
         public DbSet<Evento> Eventos { get; set; }
 
         public DbSet<Usuario> Usuarios { get; set; }
+
+        public DbSet<Alerta> Alertas { get; set; }
+
+        public DbSet<TipoEvento> TipoEventos { get; set; }
     }
 }

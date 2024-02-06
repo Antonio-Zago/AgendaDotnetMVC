@@ -6,9 +6,11 @@
 
         public string Nome { get; set; }
 
-        public char[] Cor { get; set; }
+        public string Cor { get; set; }
 
         public string Icone { get; set; }
+
+        public List<Evento> Eventos { get; set; }
 
     }
 }

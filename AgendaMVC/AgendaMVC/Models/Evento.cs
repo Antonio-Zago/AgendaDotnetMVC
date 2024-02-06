@@ -15,5 +15,11 @@
         public int UsuarioId { get; set; }
 
         public Usuario Usuario { get; set; }
+
+        public List<Alerta> Alertas { get; set; }
+
+        public int TipoEventoId { get; set; }
+
+        public TipoEvento TipoEventos { get; set; }
     }
 }
