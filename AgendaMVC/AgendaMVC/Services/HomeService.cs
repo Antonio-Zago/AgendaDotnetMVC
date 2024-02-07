@@ -7,10 +7,12 @@ namespace AgendaMVC.Services
     public class HomeService
     {
         private readonly IEventoRepository _eventoRepository;
+        private readonly ITipoEventoRepository _tipoEventoRepository;
 
-        public HomeService(IEventoRepository eventoRepository)
+        public HomeService(IEventoRepository eventoRepository, ITipoEventoRepository tipoEventoRepository)
         {
             _eventoRepository = eventoRepository;
+            _tipoEventoRepository = tipoEventoRepository;   
         }
 
         public IEnumerable<EventoDto> GetEventos()
@@ -21,7 +23,14 @@ namespace AgendaMVC.Services
         private EventoDto ConvertToEventoDto(Evento evento)
         {
             var dto = new EventoDto();
-            dto.EventoId = evento.EventoId;
+            dto.Nome = evento.Nome;
+            dto.DataInicio = evento.DataInicialOcorrencia;
+            dto.DataFim = evento.DataFinalOcorrencia;
+            dto.Feito = evento.Feito;
+
+            var tipoEvento = _tipoEventoRepository.GetTipoEventoById(evento.TipoEventoId);
+
+            dto.TipoEventoNome = tipoEvento.Nome;
 
             return dto;
         }

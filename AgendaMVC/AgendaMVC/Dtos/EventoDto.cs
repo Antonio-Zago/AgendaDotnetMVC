@@ -2,6 +2,13 @@
 {
     public class EventoDto
     {
-        public int EventoId { get; set; }
+        public string Nome { get; set; }
+
+        public DateTime DataInicio { get; set; }
+        public DateTime DataFim { get; set; }
+
+        public bool Feito { get; set; }
+
+        public string TipoEventoNome { get; set; }
     }
 }

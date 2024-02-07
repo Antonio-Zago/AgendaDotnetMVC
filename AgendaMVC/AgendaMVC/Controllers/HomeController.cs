@@ -15,8 +15,8 @@ namespace AgendaMVC.Controllers
         }
         public IActionResult Index()
         {
-            var eventos = _homeService.GetEventos();
-            return View();
+            var eventosDto = _homeService.GetEventos();
+            return View(eventosDto);
         }
 
 

@@ -1,5 +1,12 @@
-﻿<div class="text-center">
-    <div class="row">
+﻿@using AgendaMVC.Dtos
+@model IEnumerable<EventoDto>
 
-    </div>
+<div class="text-center">
+    @foreach (var eventoDto in Model)
+    {
+       <div class="row">
+           @eventoDto.Nome
+        </div> 
+    }
+    
 </div>

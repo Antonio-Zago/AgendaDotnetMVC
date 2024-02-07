@@ -10,11 +10,12 @@ var connection = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<AppDbContext>(options =>
 {
     options.UseMySql(connection, ServerVersion.AutoDetect(connection));
-});
+}, ServiceLifetime.Transient);
 
 builder.Services.AddTransient<HomeService>();
 builder.Services.AddTransient<IEventoRepository, EventoRepository>();
-           
+builder.Services.AddTransient<ITipoEventoRepository, TipoEventoRepository>();
+
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
