@@ -10,5 +10,7 @@
         public bool Feito { get; set; }
 
         public string TipoEventoNome { get; set; }
+
+        public string StatusAtualEvento { get; set; }
     }
 }
